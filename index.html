@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Onboarding Assistant | Navy &amp; White Edition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">OnboardPro</h1>
+          <p class="brand-subtitle">Employee Onboarding Assistant</p>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#welcome" class="nav-link">Welcome</a>
+        <a href="#policy" class="nav-link">Policy Q&amp;A</a>
+        <a href="#checklist" class="nav-link">Checklist</a>
+        <a href="#documents" class="nav-link">Joining Docs</a>
+      </nav>
+
+      <div class="security-badge">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+        <span>Client-side only</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="main-container">
+
+    <!-- Section 1: Welcome -->
+    <section id="welcome" class="section-card welcome-card">
+      <div class="welcome-decor"></div>
+      <div class="welcome-content">
+        <div class="welcome-header-row">
+          <span class="badge badge-primary">Day 1 Onboarding Portal</span>
+          <span class="date-chip" id="currentDateChip">Today</span>
+        </div>
+
+        <h2 class="welcome-title" id="welcomeHeading">
+          Welcome to the Team, <span class="highlight-name" id="displayName">Colleague</span>!
+        </h2>
+        <p class="welcome-desc">
+          We are thrilled to have you join us. This assistant is designed to guide you through your first 30 days, answer questions regarding company policies, track your milestones, and help you fill out your onboarding documentation smoothly.
+        </p>
+
+        <div class="name-input-wrapper">
+          <label for="userNameInput" class="input-label">What should we call you?</label>
+          <div class="input-action-group">
+            <div class="input-icon-box">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="userNameInput" 
+              class="form-control text-input" 
+              placeholder="Enter your full name (e.g. Alex Morgan)"
+              autocomplete="name"
+              maxlength="60"
+            >
+          </div>
+          <p class="input-hint">Your name updates your greeting and pre-fills your document forms automatically.</p>
+        </div>
+
+        <!-- Quick Summary Cards -->
+        <div class="quick-stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🕒</div>
+            <div class="stat-info">
+              <h4>Core Hours</h4>
+              <p>9:30 AM – 6:30 PM (Mon–Fri)</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-info">
+              <h4>People Ops Support</h4>
+              <p>hr@company.com &bull; Slack #hr-help</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🚀</div>
+            <div class="stat-info">
+              <h4>First Milestone</h4>
+              <p>Complete Day 1 Checklist &amp; Docs</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Policy Q&A -->
+    <section id="policy" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">Company Policy Q&amp;A</h3>
+            <p class="section-subtitle">Instant answers to common workplace, leave, IT, and conduct guidelines</p>
+          </div>
+        </div>
+        <span class="badge badge-navy">Instant Assistant</span>
+      </div>
+
+      <!-- Quick Question Buttons -->
+      <div class="quick-questions-panel">
+        <span class="quick-questions-label">Popular queries:</span>
+        <div class="quick-buttons-group">
+          <button type="button" class="quick-btn" data-query="working hours">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            Working Hours
+          </button>
+          <button type="button" class="quick-btn" data-query="leave policy">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            Leave &amp; Holidays
+          </button>
+          <button type="button" class="quick-btn" data-query="dress code">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.5a2 2 0 0 0 1.25 1.55L6 11.5V20a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-8.5l1.89-.76a2 2 0 0 0 1.25-1.55l.58-3.5a2 2 0 0 0-1.34-2.23z"></path></svg>
+            Dress Code
+          </button>
+          <button type="button" class="quick-btn" data-query="IT usage">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            IT &amp; Asset Usage
+          </button>
+        </div>
+      </div>
+
+      <!-- Question Input Form -->
+      <div class="query-input-container">
+        <div class="search-input-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="policyQueryInput" 
+            class="form-control query-input" 
+            placeholder="Ask about leave, casual dress, working hours, laptop security, code of conduct..."
+          >
+          <button type="button" id="clearQueryBtn" class="clear-input-btn" title="Clear input" style="display:none;">&times;</button>
+        </div>
+        <button type="button" id="askPolicyBtn" class="btn btn-primary">
+          <span>Search Policy</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Answer Display Box -->
+      <div id="policyAnswerContainer" class="policy-answer-box empty-state">
+        <div class="answer-empty">
+          <div class="empty-icon-circle">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </div>
+          <h4 class="empty-title">Have a policy question?</h4>
+          <p class="empty-sub">Type a keyword above or click one of the quick buttons to view policy details.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Onboarding Checklist -->
+    <section id="checklist" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"></path>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">Onboarding Checklist</h3>
+            <p class="section-subtitle">Track your Day 1, Week 1, and Month 1 milestones (saved automatically in browser)</p>
+          </div>
+        </div>
+        <button type="button" id="resetChecklistBtn" class="btn btn-outline-danger btn-sm" title="Reset all checked items">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="1 4 1 10 7 10"></polyline>
+            <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path>
+          </svg>
+          Reset Checklist
+        </button>
+      </div>
+
+      <!-- Checklist Progress Section -->
+      <div class="checklist-progress-card">
+        <div class="progress-info-row">
+          <span class="progress-label">Overall Completion</span>
+          <span class="progress-stats" id="checklistStats">0 of 12 completed (0%)</span>
+        </div>
+        <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar-fill" id="progressBarFill" style="width: 0%;"></div>
+        </div>
+        <div class="progress-milestone-pills" id="milestonePills">
+          <span class="milestone-pill" id="pillDay1">Day 1: 0/4</span>
+          <span class="milestone-pill" id="pillWeek1">Week 1: 0/4</span>
+          <span class="milestone-pill" id="pillMonth1">Month 1: 0/4</span>
+        </div>
+      </div>
+
+      <!-- Checklist Groups -->
+      <div class="checklist-groups-container">
+
+        <!-- Group 1: Day 1 -->
+        <div class="checklist-group">
+          <div class="group-header">
+            <div class="group-title-box">
+              <span class="group-tag group-tag-day1">Day 1</span>
+              <h4 class="group-title">First Day Essentials</h4>
+            </div>
+            <span class="group-count" id="countDay1">0/4</span>
+          </div>
+          <div class="task-list" id="taskListDay1">
+            <!-- Dynamically rendered / populated by JS -->
+          </div>
+        </div>
+
+        <!-- Group 2: Week 1 -->
+        <div class="checklist-group">
+          <div class="group-header">
+            <div class="group-title-box">
+              <span class="group-tag group-tag-week1">Week 1</span>
+              <h4 class="group-title">Team Integration &amp; Setup</h4>
+            </div>
+            <span class="group-count" id="countWeek1">0/4</span>
+          </div>
+          <div class="task-list" id="taskListWeek1">
+            <!-- Dynamically rendered / populated by JS -->
+          </div>
+        </div>
+
+        <!-- Group 3: Month 1 -->
+        <div class="checklist-group">
+          <div class="group-header">
+            <div class="group-title-box">
+              <span class="group-tag group-tag-month1">Month 1</span>
+              <h4 class="group-title">Autonomy &amp; First Milestone</h4>
+            </div>
+            <span class="group-count" id="countMonth1">0/4</span>
+          </div>
+          <div class="task-list" id="taskListMonth1">
+            <!-- Dynamically rendered / populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 4: Joining Documents -->
+    <section id="documents" class="section-card">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <div class="section-icon-badge">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          </div>
+          <div>
+            <h3 class="section-title">Joining Documents (9 Forms)</h3>
+            <p class="section-subtitle">Fill in your onboarding details. Never saved anywhere &mdash; stays strictly in this tab.</p>
+          </div>
+        </div>
+
+        <div class="accordion-global-actions">
+          <button type="button" id="expandAllBtn" class="btn btn-outline-secondary btn-sm">Expand All</button>
+          <button type="button" id="collapseAllBtn" class="btn btn-outline-secondary btn-sm">Collapse All</button>
+        </div>
+      </div>
+
+      <!-- Privacy Notice Banner -->
+      <div class="privacy-alert">
+        <div class="privacy-icon">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="privacy-text">
+          <strong>Zero-Storage Guarantee:</strong> For privacy &amp; security, all data entered below remains exclusively in page memory and is <em>never</em> sent over the network or saved to localStorage/cookies. Click <strong>"Copy Filled Details"</strong> when you are ready to copy your compiled text report.
+        </div>
+      </div>
+
+      <!-- Action Buttons Bar Top -->
+      <div class="form-action-toolbar">
+        <button type="button" id="copyDetailsBtn" class="btn btn-success btn-lg">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Filled Details
+        </button>
+        <button type="button" id="clearFormsBtn" class="btn btn-danger btn-lg">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          Clear Forms
+        </button>
+      </div>
+
+      <!-- 9 Collapsible Accordion Forms -->
+      <div class="accordion-container" id="formsAccordion">
+
+        <!-- Form 1: Personal Details -->
+        <div class="accordion-item" data-form-index="1">
+          <button type="button" class="accordion-header" aria-expanded="true">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">1</span>
+              <div>
+                <h4 class="accordion-heading">Personal Details</h4>
+                <p class="accordion-subtext">Basic identity, demographic, and contact information</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm1">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form1_fullname">Full Legal Name</label>
+                <input type="text" id="form1_fullname" class="form-control" placeholder="First Middle Last">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_dob">Date of Birth</label>
+                <input type="date" id="form1_dob" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_gender">Gender</label>
+                <select id="form1_gender" class="form-control">
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Non-Binary">Non-Binary</option>
+                  <option value="Prefer not to say">Prefer not to say</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_bloodgroup">Blood Group</label>
+                <select id="form1_bloodgroup" class="form-control">
+                  <option value="">Select Blood Group</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_marital">Marital Status</label>
+                <select id="form1_marital" class="form-control">
+                  <option value="">Select Marital Status</option>
+                  <option value="Single">Single</option>
+                  <option value="Married">Married</option>
+                  <option value="Divorced">Divorced</option>
+                  <option value="Widowed">Widowed</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_email">Personal Email Address</label>
+                <input type="email" id="form1_email" class="form-control" placeholder="name@domain.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form1_mobile">Mobile Phone Number</label>
+                <input type="tel" id="form1_mobile" class="form-control" placeholder="+1 (555) 000-0000 / +91 9876543210">
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form1_current_addr">Current Residential Address</label>
+                <textarea id="form1_current_addr" class="form-control" rows="2" placeholder="Street address, Apartment/Unit, City, State/Province, ZIP/Postal code"></textarea>
+              </div>
+              <div class="form-group col-span-2">
+                <div class="checkbox-wrapper">
+                  <input type="checkbox" id="form1_same_address">
+                  <label for="form1_same_address">Permanent address is the same as current address</label>
+                </div>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form1_perm_addr">Permanent Address</label>
+                <textarea id="form1_perm_addr" class="form-control" rows="2" placeholder="Permanent address details if different from current address"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 2: ID and Address Proof Checklist -->
+        <div class="accordion-item" data-form-index="2">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">2</span>
+              <div>
+                <h4 class="accordion-heading">ID &amp; Address Proof Checklist</h4>
+                <p class="accordion-subtext">Government-issued identity &amp; residence verification details</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm2">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form2_aadhaar">National ID / Aadhaar / SSN</label>
+                <input type="text" id="form2_aadhaar" class="form-control" placeholder="e.g. 12-digit Aadhaar / SSN / National ID">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form2_pan">PAN / Tax ID Number</label>
+                <input type="text" id="form2_pan" class="form-control" placeholder="e.g. ABCDE1234F">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form2_passport">Passport Number (Optional)</label>
+                <input type="text" id="form2_passport" class="form-control" placeholder="Passport No. &amp; Expiry Date">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form2_dl">Voter ID / Driving License (Optional)</label>
+                <input type="text" id="form2_dl" class="form-control" placeholder="DL or Voter Identification No.">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form2_doc_type">Address Proof Document Type</label>
+                <select id="form2_doc_type" class="form-control">
+                  <option value="">Select Document Type</option>
+                  <option value="Electricity / Utility Bill">Electricity / Utility Bill</option>
+                  <option value="Registered Rent Agreement">Registered Rent Agreement</option>
+                  <option value="Bank Statement / Passbook">Bank Statement / Passbook</option>
+                  <option value="Passport Copy">Passport Copy</option>
+                  <option value="National ID Card">National ID Card</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form2_doc_ref">Address Proof Document Ref / Number</label>
+                <input type="text" id="form2_doc_ref" class="form-control" placeholder="Document reference / account / consumer number">
+              </div>
+              <div class="form-group col-span-2">
+                <div class="sub-checkbox-list">
+                  <span class="sub-label">Self-Verification Checklist of Attached Hardcopies/Scans:</span>
+                  <div class="checkbox-row">
+                    <label><input type="checkbox" id="form2_check_photo"> 2 Passport Size Photographs Prepared</label>
+                    <label><input type="checkbox" id="form2_check_id"> ID Proof Self-Attested Copy Ready</label>
+                    <label><input type="checkbox" id="form2_check_addr"> Address Proof Self-Attested Copy Ready</label>
+                    <label><input type="checkbox" id="form2_check_edu"> Education &amp; Degree Certificates Ready</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 3: Bank Details -->
+        <div class="accordion-item" data-form-index="3">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">3</span>
+              <div>
+                <h4 class="accordion-heading">Bank Details (Salary Disbursement)</h4>
+                <p class="accordion-subtext">Direct deposit account for monthly payroll &amp; reimbursements</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm3">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form3_bankname">Bank Name</label>
+                <input type="text" id="form3_bankname" class="form-control" placeholder="e.g. HDFC Bank, Chase, ICICI, Citi">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form3_accname">Account Holder Name</label>
+                <input type="text" id="form3_accname" class="form-control" placeholder="Must match employee legal name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form3_accnum">Bank Account Number</label>
+                <input type="text" id="form3_accnum" class="form-control" placeholder="Enter bank account number">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form3_accnum_confirm">Confirm Account Number</label>
+                <input type="text" id="form3_accnum_confirm" class="form-control" placeholder="Re-enter bank account number">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form3_ifsc">IFSC / Routing / SWIFT Code</label>
+                <input type="text" id="form3_ifsc" class="form-control" placeholder="e.g. HDFC0001234 or 9-digit routing">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form3_branch">Branch Name &amp; City</label>
+                <input type="text" id="form3_branch" class="form-control" placeholder="e.g. Downtown Branch, City">
+              </div>
+              <div class="form-group col-span-2">
+                <div class="checkbox-wrapper">
+                  <input type="checkbox" id="form3_cancelled_cheque">
+                  <label for="form3_cancelled_cheque">I have a voided/cancelled cheque or official bank statement copy for payroll verification.</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 4: PF/UAN and ESIC -->
+        <div class="accordion-item" data-form-index="4">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">4</span>
+              <div>
+                <h4 class="accordion-heading">PF / UAN &amp; ESIC Details</h4>
+                <p class="accordion-subtext">Provident Fund, Universal Account Number &amp; Employee State Insurance</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm4">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form4_uan">Universal Account Number (UAN)</label>
+                <input type="text" id="form4_uan" class="form-control" placeholder="12-digit UAN (leave blank if fresh graduate)">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form4_prev_pf">Previous PF Member ID</label>
+                <input type="text" id="form4_prev_pf" class="form-control" placeholder="e.g. DL/CPM/0012345/000/0000000">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form4_esic">ESIC IP Number (If Applicable)</label>
+                <input type="text" id="form4_esic" class="form-control" placeholder="17-digit ESIC Insurance number">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form4_prev_company">Previous Employer Name</label>
+                <input type="text" id="form4_prev_company" class="form-control" placeholder="Name of immediate prior employer">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form4_exit_date">Date of Exit / Relieving from Prior Org</label>
+                <input type="date" id="form4_exit_date" class="form-control">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form4_first_job">Employment Status</label>
+                <select id="form4_first_job" class="form-control">
+                  <option value="">Select Status</option>
+                  <option value="Experienced Professional">Experienced Professional (Existing UAN)</option>
+                  <option value="Fresher / First Employment">Fresher / First Employment (New UAN needed)</option>
+                  <option value="International Hire">International Hire (Non-resident)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 5: Nominations -->
+        <div class="accordion-item" data-form-index="5">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">5</span>
+              <div>
+                <h4 class="accordion-heading">Beneficiary Nominations</h4>
+                <p class="accordion-subtext">Nominees for Provident Fund, Gratuity, and Group Insurance</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm5">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-sub-block">
+              <h5 class="sub-block-title">Primary Provident Fund (PF) Nominee</h5>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="form5_pf_nom_name">Nominee Full Name</label>
+                  <input type="text" id="form5_pf_nom_name" class="form-control" placeholder="Full name of nominee">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_pf_nom_rel">Relationship</label>
+                  <select id="form5_pf_nom_rel" class="form-control">
+                    <option value="">Select Relationship</option>
+                    <option value="Spouse">Spouse</option>
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Son">Son</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_pf_nom_dob">Nominee Date of Birth</label>
+                  <input type="date" id="form5_pf_nom_dob" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_pf_nom_share">Share of Benefit (%)</label>
+                  <input type="number" id="form5_pf_nom_share" class="form-control" placeholder="e.g. 100" min="1" max="100">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-sub-block" style="margin-top: 1rem;">
+              <h5 class="sub-block-title">Gratuity &amp; Group Life Insurance Nominee</h5>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="form5_grat_nom_name">Gratuity Nominee Name</label>
+                  <input type="text" id="form5_grat_nom_name" class="form-control" placeholder="Full name of nominee">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_grat_nom_rel">Relationship</label>
+                  <select id="form5_grat_nom_rel" class="form-control">
+                    <option value="">Select Relationship</option>
+                    <option value="Spouse">Spouse</option>
+                    <option value="Father">Father</option>
+                    <option value="Mother">Mother</option>
+                    <option value="Son">Son</option>
+                    <option value="Daughter">Daughter</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_grat_nom_share">Gratuity Share (%)</label>
+                  <input type="number" id="form5_grat_nom_share" class="form-control" placeholder="e.g. 100" min="1" max="100">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form5_nom_addr">Nominee Residential Address</label>
+                  <input type="text" id="form5_nom_addr" class="form-control" placeholder="City, State, Country">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 6: Emergency Contact -->
+        <div class="accordion-item" data-form-index="6">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">6</span>
+              <div>
+                <h4 class="accordion-heading">Emergency Contact</h4>
+                <p class="accordion-subtext">Primary and secondary contacts for urgent medical or safety situations</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm6">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form6_contact_name">Primary Contact Person</label>
+                <input type="text" id="form6_contact_name" class="form-control" placeholder="Full name of emergency contact">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form6_contact_rel">Relationship</label>
+                <input type="text" id="form6_contact_rel" class="form-control" placeholder="e.g. Spouse, Parent, Sibling, Friend">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form6_contact_phone">Primary Phone Number</label>
+                <input type="tel" id="form6_contact_phone" class="form-control" placeholder="+1 (555) 000-0000 / +91 9876543210">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form6_contact_alt">Alternate Phone Number</label>
+                <input type="tel" id="form6_contact_alt" class="form-control" placeholder="Alternate phone / work phone">
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form6_contact_addr">Emergency Contact Address</label>
+                <textarea id="form6_contact_addr" class="form-control" rows="2" placeholder="Full residential address of emergency contact"></textarea>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form6_medical_notes">Medical Conditions / Allergies (Optional)</label>
+                <input type="text" id="form6_medical_notes" class="form-control" placeholder="Any crucial notes for first responders (e.g. Penicillin allergy, diabetic, etc.)">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 7: NDA -->
+        <div class="accordion-item" data-form-index="7">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">7</span>
+              <div>
+                <h4 class="accordion-heading">Non-Disclosure Agreement (NDA)</h4>
+                <p class="accordion-subtext">Confidentiality, intellectual property assignment &amp; trade secrets</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm7">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="legal-text-scrollbox">
+              <h5>EMPLOYEE NON-DISCLOSURE AND PROPRIETARY INFORMATION AGREEMENT</h5>
+              <p>1. <strong>Confidentiality Obligations:</strong> As an employee, you will have access to confidential and proprietary information including but not limited to source code, client records, business strategies, technical designs, financial metrics, and operational workflows. You agree to hold all such information in the strictest confidence and not disclose it to any third party without explicit prior written authorization.</p>
+              <p>2. <strong>Intellectual Property &amp; Works for Hire:</strong> All intellectual property, designs, inventions, documentation, software, algorithms, and processes developed by you during the course of employment and utilizing company resources belong exclusively to the company.</p>
+              <p>3. <strong>Return of Company Materials:</strong> Upon termination of employment or upon request, you agree to immediately return all company-owned materials, devices, credentials, documents, and backups in your possession.</p>
+              <p>4. <strong>Survival:</strong> The obligations regarding proprietary and confidential trade secrets shall survive the termination or conclusion of your employment relationship indefinitely.</p>
+            </div>
+            <div class="form-grid" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label class="form-label" for="form7_signee_name">Full Legal Name (Digital Signature)</label>
+                <input type="text" id="form7_signee_name" class="form-control" placeholder="Type your full name to acknowledge">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form7_sign_date">Date of Signing</label>
+                <input type="date" id="form7_sign_date" class="form-control">
+              </div>
+              <div class="form-group col-span-2">
+                <div class="checkbox-wrapper checkbox-highlight">
+                  <input type="checkbox" id="form7_nda_agree">
+                  <label for="form7_nda_agree">
+                    <strong>I have carefully read, understood, and agree to be bound by the terms and conditions of this Non-Disclosure Agreement.</strong>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 8: Policy Acknowledgment -->
+        <div class="accordion-item" data-form-index="8">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">8</span>
+              <div>
+                <h4 class="accordion-heading">Policy Acknowledgment</h4>
+                <p class="accordion-subtext">Code of Conduct, Anti-Harassment, and Information Security sign-off</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm8">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="policy-badges-grid">
+              <div class="policy-summary-card">
+                <span class="badge-tag">Ethical Standard</span>
+                <h6>Code of Conduct &amp; Ethics</h6>
+                <p>Commitment to honesty, transparency, non-discrimination, anti-bribery, and respect for all colleagues and partners.</p>
+              </div>
+              <div class="policy-summary-card">
+                <span class="badge-tag">Zero Tolerance</span>
+                <h6>Anti-Harassment &amp; POSH</h6>
+                <p>Strict zero-tolerance policy against any form of harassment, intimidation, hate speech, or discrimination.</p>
+              </div>
+              <div class="policy-summary-card">
+                <span class="badge-tag">Cybersecurity</span>
+                <h6>Information Security Policy</h6>
+                <p>Mandatory multi-factor authentication, secure password hygiene, and protection of company client data.</p>
+              </div>
+              <div class="policy-summary-card">
+                <span class="badge-tag">Public Representation</span>
+                <h6>Social Media &amp; Communications</h6>
+                <p>Guidelines for public discussions and social media mentions relating to company business and client relationships.</p>
+              </div>
+            </div>
+
+            <div class="form-grid" style="margin-top: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="form8_emp_id">Employee ID (if assigned)</label>
+                <input type="text" id="form8_emp_id" class="form-control" placeholder="e.g. EMP-2026-089">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form8_dept">Designated Department / Unit</label>
+                <input type="text" id="form8_dept" class="form-control" placeholder="e.g. Engineering, Sales, Product, Ops">
+              </div>
+              <div class="form-group col-span-2">
+                <div class="checkbox-wrapper checkbox-highlight">
+                  <input type="checkbox" id="form8_policy_agree">
+                  <label for="form8_policy_agree">
+                    <strong>I confirm that I have reviewed, understood, and hereby agree to comply in full with all company workplace policies, Code of Conduct, and security protocols.</strong>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form 9: IT Asset Declaration -->
+        <div class="accordion-item" data-form-index="9">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <div class="accordion-title-box">
+              <span class="form-number-chip">9</span>
+              <div>
+                <h4 class="accordion-heading">IT Asset Declaration</h4>
+                <p class="accordion-subtext">Issued workstation hardware, serial numbers, and equipment usage pledge</p>
+              </div>
+            </div>
+            <div class="accordion-status">
+              <span class="filled-counter" id="counterForm9">0 filled</span>
+              <svg class="chevron-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" for="form9_asset_type">Primary Workstation Type</label>
+                <select id="form9_asset_type" class="form-control">
+                  <option value="">Select Hardware Type</option>
+                  <option value="Apple MacBook Pro 14/16">Apple MacBook Pro 14/16"</option>
+                  <option value="Apple MacBook Air M3">Apple MacBook Air M3</option>
+                  <option value="Dell Latitude / XPS Enterprise">Dell Latitude / XPS Enterprise</option>
+                  <option value="Lenovo ThinkPad P/T Series">Lenovo ThinkPad P/T Series</option>
+                  <option value="Desktop Workstation">Desktop Workstation</option>
+                  <option value="BYOD (Bring Your Own Device)">BYOD (Bring Your Own Device approved)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form9_serial">Laptop Serial / Asset Tag No.</label>
+                <input type="text" id="form9_serial" class="form-control" placeholder="e.g. SN: C02G4589MD6R or TAG-4482">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form9_os">Operating System</label>
+                <select id="form9_os" class="form-control">
+                  <option value="">Select OS</option>
+                  <option value="macOS Sonoma / Sequoia">macOS</option>
+                  <option value="Windows 11 Pro">Windows 11 Pro</option>
+                  <option value="Ubuntu LTS / Linux">Ubuntu LTS / Linux</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="form9_monitor">External Monitor Issued</label>
+                <select id="form9_monitor" class="form-control">
+                  <option value="None">None</option>
+                  <option value="Single 27-inch 4K Monitor">Single 27-inch 4K Monitor</option>
+                  <option value="Dual 24-inch Monitors">Dual 24-inch Monitors</option>
+                  <option value="Ultra-wide 34-inch Monitor">Ultra-wide 34-inch Monitor</option>
+                </select>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label">Peripheral Accessories Handed Over</label>
+                <div class="checkbox-row">
+                  <label><input type="checkbox" id="form9_acc_charger"> Power Adapter &amp; Cable</label>
+                  <label><input type="checkbox" id="form9_acc_mouse"> Wireless Mouse</label>
+                  <label><input type="checkbox" id="form9_acc_keyboard"> External Keyboard</label>
+                  <label><input type="checkbox" id="form9_acc_headset"> Noise-Cancelling Headset</label>
+                  <label><input type="checkbox" id="form9_acc_dock"> USB-C Multiport Hub</label>
+                  <label><input type="checkbox" id="form9_acc_bag"> Laptop Backpack / Sleeve</label>
+                </div>
+              </div>
+              <div class="form-group col-span-2">
+                <label class="form-label" for="form9_remarks">Hardware Condition / Special Requests</label>
+                <input type="text" id="form9_remarks" class="form-control" placeholder="e.g. Brand new in sealed box, or minor cosmetic scratch on lid">
+              </div>
+              <div class="form-group col-span-2">
+                <div class="checkbox-wrapper checkbox-highlight">
+                  <input type="checkbox" id="form9_asset_pledge">
+                  <label for="form9_asset_pledge">
+                    <strong>I acknowledge receipt of the declared IT equipment. I declare that I will exercise due care in using company hardware exclusively for authorized official purposes and report any loss or damage immediately.</strong>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons Bar Bottom -->
+      <div class="form-action-toolbar" style="margin-top: 1.5rem;">
+        <button type="button" id="copyDetailsBtn2" class="btn btn-success btn-lg">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </svg>
+          Copy Filled Details
+        </button>
+        <button type="button" id="clearFormsBtn2" class="btn btn-danger btn-lg">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          Clear Forms
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <strong>OnboardPro &bull; Employee Onboarding Assistant</strong>
+        <span>Clean &bull; Private &bull; Client-side Only</span>
+      </div>
+      <div class="footer-right">
+        <span>Need assistance? Contact <a href="mailto:hr@company.com">hr@company.com</a> or IT Helpdesk at <a href="mailto:it-support@company.com">it-support@company.com</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-icon" id="toastIcon">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="20 6 9 17 4 12"></polyline>
+      </svg>
+    </div>
+    <div class="toast-body">
+      <h5 class="toast-title" id="toastTitle">Notification</h5>
+      <p class="toast-message" id="toastMessage">Action completed successfully.</p>
+    </div>
+    <button type="button" class="toast-close" id="toastCloseBtn" aria-label="Close">&times;</button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
